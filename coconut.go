@@ -31,7 +31,7 @@ type Job struct {
 }
 
 var api = ApiSettings{
-	url:       "https://api.coconut.co",
+	url:       "https://byte-api.coconut.co",
 	endPoint:  "/v1/job",
 	userAgent: "Coconut/1.4.0 (Go)",
 }
