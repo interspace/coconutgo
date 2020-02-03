@@ -44,9 +44,12 @@ func NewJob(c Config, options ...string) (Job, error) {
 		// By default we get the API key from the env variable COCONUT_API_KEY
 		if len(options) == 0 {
 			apiKey = os.Getenv("COCONUT_API_KEY")
-		} else {
+		} else if len(options) == 1 {
 			// API key is given in second parameter
 			apiKey = options[0]
+		} else if len(options) == 2 {
+			api.url = options[0]
+			apiKey = options[1]
 		}
 		return Submit(conf, apiKey)
 	}
